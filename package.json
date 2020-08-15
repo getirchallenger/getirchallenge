@@ -1,0 +1,22 @@
+{
+  "name": "getirchallenge",
+  "version": "1.0.0",
+  "description": "Getir Challenge",
+  "main": "main.js",
+  "scripts": {
+    "serve": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getirchallenger/getirchallenge.git"
+  },
+  "author": "getirchallenger@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/getirchallenger/getirchallenge/issues"
+  },
+  "homepage": "https://github.com/getirchallenger/getirchallenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
