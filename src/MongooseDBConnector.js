@@ -7,6 +7,7 @@ module.exports = function () {
     }
 
     this.getFilteredRecords = function (startDate, endDate, minCount, maxCount) {
+        return Promise.resolve({});
     };
 
     main();

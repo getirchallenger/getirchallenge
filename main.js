@@ -4,7 +4,7 @@ const Server = require("./src/Server");
 
 let serverInstance;
 let mongooseDBConnector;
-let serverInstance;
+let recordManager;
 
 function main() {
     mongooseDBConnector = new MongooseDBConnector();

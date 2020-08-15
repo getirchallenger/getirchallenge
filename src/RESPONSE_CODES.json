@@ -10,5 +10,13 @@
     "DB_QUERY_FAILED": {
         "code": 2,
         "msg": "DB Query Failed"
+    },
+    "INVALID_REQUEST_PARAMETERS": {
+        "code": 3,
+        "msg": "Request parameters are not valid"
+    },
+    "UNKNOWN_ERROR": {
+        "code": 4,
+        "msg": "Unknown error"
     }
 }

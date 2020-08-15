@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require('body-parser');
-
+const RESPONSE_CODES = require("./RESPONSE_CODES.json");
 
 const PORT = 8080;
 
@@ -39,16 +39,21 @@ module.exports = function (_recordManager) {
     app.post("/getData", handleGetData.bind(this));
   }
 
-  // {
-  //   "startDate": "2016-01-26",
-  //   "endDate": "2018-02-02",
-  //   "minCount": 2700,
-  //   "maxCount": 3000
-  // }
   function handleGetData(req, res) {
-    recordManager.getData(null, null, null, null).then((records, code, msg) => {
-      res.send({ records, code, msg });
-    });
+    recordManager.getData(req.body.startDate, req.body.endDate, req.body.minCount, req.body.maxCount)
+      .then((records, code, msg) => {
+
+        res.send({ records, code, msg });
+
+      }).catch(error => {
+
+        error = error || RESPONSE_CODES.UNKNOWN_ERROR;
+        res.send({
+          records: [],
+          code: error.code,
+          msg: error.msg
+        });
+      });
   }
 
   main();
