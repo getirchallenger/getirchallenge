@@ -12,6 +12,12 @@ module.exports = function () {
     initHttpServer();
   }
 
+  this.listen = function () {
+    http.listen(PORT, function () {
+      console.log("Server is listening on *:" + PORT);
+    });
+  }
+
   function initHttpServer() {
     app = express();
     http = require("http").Server(app);
@@ -23,10 +29,6 @@ module.exports = function () {
     });
 
     registerEndPoints();
- 
-    http.listen(PORT, function () {
-      console.log("Server is listening on *:" + PORT);
-    });
   }
 
   function registerEndPoints() {

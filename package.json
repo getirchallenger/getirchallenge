@@ -4,7 +4,8 @@
   "description": "Getir Challenge",
   "main": "main.js",
   "scripts": {
-    "serve": "node main.js"
+    "serve": "node main.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,15 @@
   "homepage": "https://github.com/getirchallenger/getirchallenge#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
   }
 }
