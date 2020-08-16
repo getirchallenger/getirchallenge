@@ -8,6 +8,16 @@
     "parserOptions": {
         "ecmaVersion": 11
     },
-    "rules": {
-    }
+    "rules": {},
+    "overrides": [
+        {
+            "files": [
+                "**/*.spec.js",
+                "**/*.spec.jsx"
+            ],
+            "env": {
+                "jest": true
+            }
+        }
+    ]
 }
