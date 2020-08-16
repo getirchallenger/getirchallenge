@@ -16,7 +16,7 @@ DB_NAME=
 ```
 ## How to run
 ```
-npm run serve;
+npm run start;
 
 npm run test;
 

@@ -4,7 +4,7 @@
   "description": "Getir Challenge",
   "main": "main.js",
   "scripts": {
-    "serve": "node main.js",
+    "start": "node main.js",
     "lint": "eslint .",
     "test": "clear; jest --verbose",
     "coverage": "clear; jest --verbose --coverage"
