@@ -77,3 +77,4 @@ npm run coverage;
 * Minimum **coverage** checks may be added to pre-commit hooks.
 * An **authentication** mechanism should be implemented to protect endpoints.
 * An API documentation may be provided by tools like swagger.io
+* A CI/CD pipeline integration should be activeated on GitHub to run test on branches.
