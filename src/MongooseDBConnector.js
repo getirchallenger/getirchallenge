@@ -4,16 +4,20 @@
  * implementations.
  * 
  */
-
 const mongoose = require('mongoose');
 const RESPONSE_CODES = require("./RESPONSE_CODES.json");
 const { RecordModel } = require("./models/record");
 
-const DBURI = "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true";
 
 module.exports = function () {
 
+  let DBURI;
   function main() {
+    const userName = process.env.DB_USER_NAME;
+    const password = process.env.DB_PASSWORD;
+    const dbServer = process.env.DB_SERVER;
+    const dbName = process.env.DB_NAME;
+    DBURI = `mongodb+srv://${userName}:${password}@${dbServer}/${dbName}?retryWrites=true`;
   }
 
   this.connectToDB = function () {

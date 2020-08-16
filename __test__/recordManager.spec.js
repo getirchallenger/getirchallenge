@@ -1,3 +1,4 @@
+const dotenv = require("dotenv");
 const MongooseDBConnector = require("../src/MongooseDBConnector");
 const RecordManager = require("../src/RecordManager");
 const RESPONSE_CODES = require("../src/RESPONSE_CODES.json");
@@ -9,6 +10,7 @@ let recordManager;
 // before starting the tests. We will use genuine classes
 // not mockups.
 beforeAll(() => {
+  dotenv.config();
   mongooseDBConnector = new MongooseDBConnector();
   return mongooseDBConnector.connectToDB().then(() => {
     recordManager = new RecordManager(mongooseDBConnector);

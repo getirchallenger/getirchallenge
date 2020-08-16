@@ -1,3 +1,4 @@
+const dotenv = require("dotenv");
 const fetch = require('node-fetch');
 const MongooseDBConnector = require("../src/MongooseDBConnector");
 const RecordManager = require("../src/RecordManager");
@@ -13,6 +14,7 @@ let serverHandle;
 // before starting the tests. We will use genuine classes
 // not mockups.
 beforeAll(() => {
+  dotenv.config();
   mongooseDBConnector = new MongooseDBConnector();
   return mongooseDBConnector.connectToDB().then(() => {
     recordManager = new RecordManager(mongooseDBConnector);

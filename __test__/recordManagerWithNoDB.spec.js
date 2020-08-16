@@ -1,3 +1,4 @@
+const dotenv = require("dotenv");
 const MongooseDBConnector = require("../src/MongooseDBConnector");
 const RecordManager = require("../src/RecordManager");
 const RESPONSE_CODES = require("../src/RESPONSE_CODES.json");
@@ -9,6 +10,7 @@ let recordManager;
 // before starting the tests. We will use genuine classes
 // not mockups.
 beforeAll(() => {
+  dotenv.config();
   mongooseDBConnector = new MongooseDBConnector();
   // I did not call mongooseDBConnector.connectToDB() intentionally
   // to test when DB connection is not successfull
@@ -16,7 +18,7 @@ beforeAll(() => {
   return recordManager;
 });
 
-describe("RecordManager Bussiness Logic Layer tests", () => {
+describe("RecordManager Bussiness Logic Layer tests when DB disconnected", () => {
   test("valid case should return 2 records", () => {
     const startDate = '2016-08-14';
     const endDate = '2018-02-02';
