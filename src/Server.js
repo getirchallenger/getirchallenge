@@ -10,7 +10,7 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const RESPONSE_CODES = require("./RESPONSE_CODES.json");
 
-const PORT = 8080;
+const PORT = 80;
 
 module.exports = function (_recordManager) {
 
